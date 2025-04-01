@@ -3,123 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio do Restaurante</title>
+    <title>Cardápio do Futuro - Restaurante XPTO</title>
+    <meta name="description" content="Explore nosso cardápio interativo com deliciosas entradas, pratos principais e sobremesas.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- 
-    <header>
-        <h1>Restaurante</h1>
-        <img src="logo.png" alt="Logo do Restaurante" width="150">
+    <header role="banner">
+        <h1>Restaurante XPTO</h1>
+        <img src="images/logo.png" alt="Logo do Restaurante XPTO" width="150">
+        <div class="cart-summary" aria-live="polite">
+            Carrinho: <span id="cart-count">0</span> itens
+        </div>
     </header>
+    <nav role="navigation" aria-label="Navegação principal do cardápio">
+        <!-- BOTÃO HAMBURGER -->
+        <button id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-nav-list">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <!-- FIM BOTÃO HAMBURGER -->
 
-
-    <nav>
-        <ul>
+        <ul id="main-nav-list">
             <li><a href="#entradas">Entradas</a></li>
             <li><a href="#pratos-principais">Pratos Principais</a></li>
             <li><a href="#sobremesas">Sobremesas</a></li>
+            <!-- BOTÕES DE FILTRO -->
+            <li class="filter-item"><button class="filter-btn active" data-filter="all">Todos</button></li>
+            <li class="filter-item"><button class="filter-btn" data-filter="vegetariano">Vegetariano</button></li>
+            <li class="filter-item"><button class="filter-btn" data-filter="sem-gluten">Sem Glúten</button></li>
+            <!-- Adicione mais filtros conforme as tags em menu-data.js -->
         </ul>
     </nav>
-
-
-    <main>
-        <section id="entradas">
-            <h2>Entradas</h2>
+    <main id="menu-container">
+        <section id="entradas" aria-labelledby="entradas-heading">
+            <h2 id="entradas-heading">Entradas</h2>
             <div class="menu-category">
-                <article>
-                    <img src="entrada1.png" alt="Bolinho de Carne Seca">
-                    <h3>Bolinho de Carne Seca</h3>
-                    <p>Bolinho crocante recheado com carne seca desfiada, perfeito para começar a refeição.</p>
-                    <p class="preco">R$ 15,90</p>
-                </article>
-                <article>
-                    <img src="entrada2.png" alt="Polenta Frita">
-                    <h3>Polenta Frita</h3>
-                    <p>Deliciosa polenta frita, servida com molho de tomate fresco e ervas finas.</p>
-                    <p class="preco">R$ 19,00</p>
-                </article>
-                <article>
-                    <img src="entrada3.png" alt="Bruschetta">
-                    <h3>Bruschetta</h3>
-                    <p>Entrada clássica da culinária italiana, uma mistura de ingredientes frescos e saborosos.</p>
-                    <p class="preco">R$ 19,00</p>
-                </article>
-                <article>
-                    <img src="entrada4.png" alt="Carpaccio">
-                    <h3>Carpaccio</h3>
-                    <p>Prato italiano feito a partir de carne ou de peixe cru, cortado em fatias finas.</p>
-                    <p class="preco">R$ 29,00</p>
-                </article>
+                <p>Carregando entradas...</p>
             </div>
         </section>
 
-        <section id="pratos-principais">
-            <h2>Pratos Principais</h2>
+        <section id="pratos-principais" aria-labelledby="pratos-principais-heading">
+            <h2 id="pratos-principais-heading">Pratos Principais</h2>
             <div class="menu-category">
-                <article>
-                    <img src="prato1.png" alt="Parmegiana">
-                    <h3>Parmegiana</h3>
-                    <p>Filé de carne empanado, coberto com molho de tomate caseiro e queijo derretido.</p>
-                    <p class="preco">R$ 45,00</p>
-                </article>
-                <article>
-                    <img src="prato2.png" alt="Risoto de Frutos do Mar">
-                    <h3>Risoto de Frutos do Mar</h3>
-                    <p>Risoto cremoso com camarões, mariscos, polvo e molho de ervas aromáticas.</p>
-                    <p class="preco">R$ 75,00</p>
-                </article>
-                <article>
-                    <img src="prato3.png" alt="Paillard de filet">
-                    <h3>Paillard de filet</h3>
-                    <p>Paillard de filet, recheado com queijo emmental, acompanha risoto de palmito com alho poró.</p>
-                    <p class="preco">R$ 75,00</p>
-                </article>
-                <article>
-                    <img src="prato4.png" alt="Salmão defumado">
-                    <h3>Salmão defumado</h3>
-                    <p>Salmão defumado com purê de funghi secchi.</p>
-                    <p class="preco">R$ 79,00</p>
-                </article>
+                <p>Carregando pratos principais...</p>
             </div>
         </section>
 
-        <section id="sobremesas">
-            <h2>Sobremesas</h2>
+        <section id="sobremesas" aria-labelledby="sobremesas-heading">
+            <h2 id="sobremesas-heading">Sobremesas</h2>
             <div class="menu-category">
-                <article>
-                    <img src="sobremesa1.png" alt="Petit Gateau">
-                    <h3>Petit Gateau</h3>
-                    <p>Doce francês com recheio de chocolate quente, servido com sorvete de creme.</p>
-                    <p class="preco">R$ 26,00</p>
-                </article>
-                <article>
-                    <img src="sobremesa2.png" alt="Palha Italiana">
-                    <h3>Palha Italiana</h3>
-                    <p>Uma sobremesa irresistível com chocolate, leite condensado e biscoitos, tradicionalmente brasileira.</p>
-                    <p class="preco">R$ 14,00</p>
-                </article>
-                <article>
-                    <img src="sobremesa3.png" alt="Tiramisù">
-                    <h3>Tiramisù</h3>
-                    <p>Clássica sobremesa italiana feita com camadas de biscoito embebido em café e creme de mascarpone.</p>
-                    <p class="preco">R$ 28,00</p>
-                </article>
-                <article>
-                    <img src="sobremesa4.png" alt="Cheesecake de Frutas Vermelhas">
-                    <h3>Cheesecake de Frutas Vermelhas</h3>
-                    <p>Cheesecake cremoso coberto com uma deliciosa calda de frutas vermelhas frescas.</p>
-                    <p class="preco">R$ 24,00</p>
-                </article>
+                <p>Carregando sobremesas...</p>
             </div>
         </section>
     </main>
 
-    
-    <footer>
-        <p>© Restaurante</p>
+    <footer role="contentinfo">
+        <p>© Restaurante XPTO - Todos os direitos reservados.</p>
     </footer>
 
+    <script src="menu-data.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
