@@ -16,8 +16,9 @@
             Carrinho: <span id="cart-count">0</span> itens
         </div>
     </header>
+
     <nav role="navigation" aria-label="Navegação principal do cardápio">
-        <!-- BOTÃO HAMBURGER -->
+        <!-- BOTÃO HAMBURGER (visível apenas em mobile) -->
         <button id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-nav-list">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -25,17 +26,13 @@
         </button>
         <!-- FIM BOTÃO HAMBURGER -->
 
-        <ul id="main-nav-list">
+        <ul id="main-nav-list"> <!-- ID adicionado -->
             <li><a href="#entradas">Entradas</a></li>
             <li><a href="#pratos-principais">Pratos Principais</a></li>
             <li><a href="#sobremesas">Sobremesas</a></li>
-            <!-- BOTÕES DE FILTRO -->
-            <li class="filter-item"><button class="filter-btn active" data-filter="all">Todos</button></li>
-            <li class="filter-item"><button class="filter-btn" data-filter="vegetariano">Vegetariano</button></li>
-            <li class="filter-item"><button class="filter-btn" data-filter="sem-gluten">Sem Glúten</button></li>
-            <!-- Adicione mais filtros conforme as tags em menu-data.js -->
         </ul>
     </nav>
+
     <main id="menu-container">
         <section id="entradas" aria-labelledby="entradas-heading">
             <h2 id="entradas-heading">Entradas</h2>
