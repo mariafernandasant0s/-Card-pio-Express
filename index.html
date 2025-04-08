@@ -11,25 +11,24 @@
 
     <header role="banner">
         <h1>Restaurante XPTO</h1>
-        <img src="images/logo.png" alt="Logo do Restaurante XPTO" width="150">
+        <img src="logo.png" alt="Logo do Restaurante XPTO" width="150">
         <div class="cart-summary" aria-live="polite">
             Carrinho: <span id="cart-count">0</span> itens
         </div>
     </header>
 
     <nav role="navigation" aria-label="Navegação principal do cardápio">
-        <!-- BOTÃO HAMBURGER (visível apenas em mobile) -->
         <button id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-nav-list">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
-        <!-- FIM BOTÃO HAMBURGER -->
 
-        <ul id="main-nav-list"> <!-- ID adicionado -->
-            <li><a href="#entradas">Entradas</a></li>
-            <li><a href="#pratos-principais">Pratos Principais</a></li>
-            <li><a href="#sobremesas">Sobremesas</a></li>
+        <ul id="main-nav-list">
+            <li><a href="#" class="nav-link" data-target="entradas">Entradas</a></li>
+            <li><a href="#" class="nav-link" data-target="pratos-principais">Pratos Principais</a></li>
+            <li><a href="#" class="nav-link" data-target="sobremesas">Sobremesas</a></li>
+            <li><a href="#" id="mostrar-tudo">Mostrar Tudo</a></li>
         </ul>
     </nav>
 
@@ -59,8 +58,8 @@
     <footer role="contentinfo">
         <p>© Restaurante XPTO - Todos os direitos reservados.</p>
     </footer>
-
-    <script src="menu-data.js"></script>
+    <script src="menu-data.js" defer></script>
     <script src="script.js" defer></script>
+
 </body>
 </html>
