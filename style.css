@@ -1,5 +1,3 @@
-/* style.css - Completo e Corrigido */
-
 /* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
@@ -7,27 +5,6 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-    padding: 20px;
-    /* Margem para compensar a altura da nav sticky. Ajuste se a altura da nav mudar. */
-    margin-top: 60px;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-top: 30px;
-    margin-bottom: 25px;
 }
 
 /* Cabeçalho */
@@ -36,8 +13,6 @@ header {
     color: white;
     padding: 15px 20px;
     text-align: center;
-    /* Position relative não é estritamente necessário aqui, mas não atrapalha */
-    position: relative;
 }
 
 header h1 {
@@ -53,83 +28,69 @@ header img {
     vertical-align: middle;
 }
 
-/* Contador do Carrinho */
-.cart-summary {
-    position: absolute;
-    top: 50%; /* Alinha verticalmente ao centro da header */
-    transform: translateY(-50%); /* Ajuste fino vertical */
-    right: 25px; /* Posição padrão em desktop */
-    background-color: #e74c3c;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease, right 0.3s ease; /* Adiciona transição para 'right' */
-    z-index: 1101; /* Acima do conteúdo da página e da nav base */
-}
-
 /* Navegação */
 nav {
     background-color: #444;
     padding: 10px 0;
-    position: sticky; /* Mantém a barra no topo */
-    top: 0;
-    z-index: 1000; /* Contexto de empilhamento base */
-    text-align: center; /* Centraliza a ul em desktop */
-    /* IMPORTANTE: Para posicionar filhos absolutos (#hamburger-btn, #main-nav-list) */
-    position: relative;
+    text-align: center;
 }
 
-/* Lista de Navegação Principal (Desktop) */
-nav ul#main-nav-list {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: inline-block; /* Para centralizar com text-align */
+    display: inline-block;
 }
 
-nav ul#main-nav-list li {
-    display: inline; /* Itens lado a lado */
-    margin: 0 18px; /* Espaçamento entre links */
+nav ul li {
+    display: inline;
+    margin: 0 18px;
 }
 
-nav ul#main-nav-list li a {
-    color: white;
+nav ul li a {
+    color: rgb(0, 0, 0); /* Links azuis */
     text-decoration: none;
     font-size: 18px;
     padding: 8px 5px;
     transition: color 0.2s ease;
 }
 
-nav ul#main-nav-list li a:hover {
-    color: #ddd;
+nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Container das Categorias de Menu */
+/* Seções do Cardápio */
+section {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
 .menu-category {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px; /* Espaço entre os cards */
+    gap: 25px;
     padding: 10px 0;
-    margin-bottom: 40px;
 }
 
-/* Card Individual de Item do Menu */
+/* Itens do Menu */
 article.menu-item {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 280px; /* Largura base do card */
+    width: 280px;
     text-align: center;
-    padding: 0; /* Padding controlado internamente */
+    padding: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column; /* Organiza conteúdo interno verticalmente */
-    margin-bottom: 20px; /* Espaço extra abaixo */
 }
 
 article.menu-item:hover {
@@ -139,68 +100,33 @@ article.menu-item:hover {
 
 article.menu-item img {
     width: 100%;
-    height: 180px; /* Altura fixa para imagens */
-    object-fit: cover; /* Garante que a imagem cubra sem distorcer */
+    height: 180px;
+    object-fit: cover;
 }
 
-/* Conteúdo dentro do card */
-.menu-item h3 {
+article.menu-item h3 {
     font-size: 1.2em;
     color: #333;
     margin: 15px 10px 5px 10px;
-    min-height: 40px; /* Altura mínima para alinhar títulos */
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.menu-item p {
+article.menu-item p {
     font-size: 0.95em;
     color: #666;
-    padding: 0 15px; /* Espaçamento lateral da descrição */
+    padding: 0 15px;
     margin-bottom: 10px;
-    flex-grow: 1; /* Ocupa espaço vertical disponível */
     line-height: 1.4;
 }
 
-.menu-item .preco {
+article.menu-item .preco {
     font-size: 1.15em;
     font-weight: bold;
     color: #e74c3c;
-    margin-bottom: 15px; /* Espaço antes do botão */
-}
-
-/* Botão Adicionar ao Carrinho */
-.add-to-cart-btn {
-    background-color: #2ecc71; /* Verde */
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1em;
-    font-weight: bold;
-    border-radius: 0 0 8px 8px; /* Arredonda só cantos inferiores */
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    width: 100%; /* Ocupa toda a largura do card */
-    margin-top: auto; /* Empurra para o final do flex container */
-    box-sizing: border-box;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #27ae60; /* Verde mais escuro */
-}
-
-.add-to-cart-btn:active {
-    transform: scale(0.99);
-}
-
-.add-to-cart-btn.added {
-    background-color: #3498db; /* Azul */
-}
-
-.add-to-cart-btn:disabled {
-    background-color: #95a5a6; /* Cinza */
-    cursor: not-allowed;
+    margin-bottom: 15px;
 }
 
 /* Rodapé */
@@ -209,196 +135,5 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 30px; /* Espaço acima do rodapé */
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Placeholder de Carregamento */
-.menu-category p {
-    color: #888;
-    font-style: italic;
-    width: 100%;
-    text-align: center;
-}
-
-/* --- ESTILOS PARA MENU HAMBURGER --- */
-
-/* Botão Hamburger (Escondido em Desktop) */
-#hamburger-btn {
-    display: none; /* Começa escondido */
-    background: none;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    position: absolute; /* Relativo à <nav> */
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1102; /* <<< MAIS ALTO de todos na nav */
-}
-
-.hamburger-line {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-
-/* --- Media Queries para Responsividade --- */
-
-/* Telas Médias (Ex: Laptops pequenos) */
-@media (max-width: 992px) {
-    article.menu-item {
-        width: calc(33.333% - 25px); /* Tenta 3 colunas */
-    }
-}
-
-/* Telas Pequenas (Ex: Tablets e Mobile - onde o hamburger aparece) */
-@media (max-width: 768px) {
-    main {
-         /* Mantém a margem se a nav continuar sticky */
-         margin-top: 50px; /* Ajuste se a altura da nav mudar */
-    }
-    article.menu-item {
-        width: calc(50% - 25px); /* Tenta 2 colunas */
-    }
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    /* MOSTRA o botão hamburger */
-    #hamburger-btn {
-        display: block;
-    }
-
-     /* AJUSTA POSIÇÃO DO CARRINHO para dar espaço ao botão */
-    .cart-summary {
-        right: 65px; /* <<< Aumentado - Ajuste fino conforme necessário */
-        /* Mantém alinhamento vertical com a nav */
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 12px;
-        padding: 4px 8px;
-    }
-
-    /* ESCONDE a lista UL padrão e prepara para modo dropdown */
-    nav ul#main-nav-list {
-        display: none; /* Esconde por padrão */
-        position: absolute; /* Posicionamento absoluto */
-        top: 100%; /* Abaixo da barra nav */
-        left: 0;
-        width: 100%;
-        background-color: #444; /* Fundo consistente */
-        flex-direction: column; /* Itens empilhados */
-        padding: 0;
-        margin: 0;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra */
-        z-index: 1050; /* Abaixo do botão e carrinho, mas acima do resto */
-    }
-
-    /* MOSTRA a lista QUANDO a classe .nav-active está na <nav> */
-    nav.nav-active ul#main-nav-list {
-        display: flex; /* Ou block, se preferir */
-    }
-
-    /* Estiliza itens da lista no modo mobile */
-    nav ul#main-nav-list li {
-        display: block; /* Ocupa largura total */
-        margin: 0;
-        text-align: center;
-        border-bottom: 1px solid #555; /* Linha separadora */
-    }
-    nav ul#main-nav-list li:last-child {
-        border-bottom: none;
-    }
-
-    /* Estiliza links no modo mobile */
-    nav ul#main-nav-list li a {
-        display: block; /* Área de clique maior */
-        padding: 15px 0;
-        font-size: 17px;
-        color: white;
-        text-decoration: none;
-    }
-
-    nav ul#main-nav-list li a:hover {
-        background-color: #555;
-        color: white;
-    }
-
-    /* Animação do Hamburger para 'X' quando ativo */
-    nav.nav-active #hamburger-btn .hamburger-line:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    nav.nav-active #hamburger-btn .hamburger-line:nth-child(2) {
-        opacity: 0; /* Linha do meio some */
-    }
-    nav.nav-active #hamburger-btn .hamburger-line:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Opcional: Remover sticky da nav em mobile */
-    /*
-     nav {
-         position: static;
-     }
-     main {
-         margin-top: 0;
-     }
-    */
-}
-
-/* Telas Muito Pequenas */
-@media (max-width: 480px) {
-    body {
-        font-size: 15px; /* Ajusta tamanho base da fonte */
-    }
-    header {
-        padding: 10px 15px;
-    }
-    header h1 {
-        font-size: 1.5em;
-    }
-    header img {
-        max-width: 80px;
-    }
-
-    /* Torna a nav estática (não-sticky) e remove margem do main */
-     nav {
-         position: static;
-     }
-     main {
-         margin-top: 0;
-         padding: 15px;
-     }
-
-    /* Itens do menu ocupam largura total */
-    article.menu-item {
-        width: 95%; /* Quase largura total */
-        max-width: 340px; /* Limite */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Ajusta posições finais de carrinho e hamburger */
-    .cart-summary {
-        font-size: 11px;
-        padding: 3px 6px;
-        right: 55px; /* Posição final ajustada */
-        top: 50%;
-        transform: translateY(-50%);
-    }
-     #hamburger-btn {
-        right: 10px; /* Posição final ajustada */
-        top: 50%;
-        transform: translateY(-50%);
-     }
-
-    h2 {
-        font-size: 24px;
-    }
+    margin-top: 30px;
 }

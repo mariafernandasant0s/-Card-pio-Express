@@ -3,63 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio do Futuro - Restaurante XPTO</title>
-    <meta name="description" content="Explore nosso cardápio interativo com deliciosas entradas, pratos principais e sobremesas.">
+    <title>Cardápio do Futuro - Restaurante </title>
+    <meta name="description" content="Explore nosso cardápio com deliciosas entradas, pratos principais e sobremesas.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!--
+        <header>: Representa o cabeçalho do site ou seção.
+        Justificativa: Contém informações introdutórias, como o título do restaurante e o logo.
+        Contribui para a estrutura e acessibilidade, definindo o início do conteúdo principal.
+    -->
     <header role="banner">
         <h1>Restaurante XPTO</h1>
         <img src="logo.png" alt="Logo do Restaurante XPTO" width="150">
-        <div class="cart-summary" aria-live="polite">
-            Carrinho: <span id="cart-count">0</span> itens
-        </div>
     </header>
 
+    <!--
+        <nav>: Define a seção de navegação do site.
+        Justificativa: Agrupa os links de navegação para as diferentes seções do cardápio.
+        Contribui para a estrutura e acessibilidade, permitindo que os usuários naveguem facilmente pelo cardápio.
+    -->
     <nav role="navigation" aria-label="Navegação principal do cardápio">
-        <button id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="main-nav-list">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-
-        <ul id="main-nav-list">
-            <li><a href="#" class="nav-link" data-target="entradas">Entradas</a></li>
-            <li><a href="#" class="nav-link" data-target="pratos-principais">Pratos Principais</a></li>
-            <li><a href="#" class="nav-link" data-target="sobremesas">Sobremesas</a></li>
-            <li><a href="#" id="mostrar-tudo">Mostrar Tudo</a></li>
+        <ul>
+            <li><a href="#entradas">Entradas</a></li>
+            <li><a href="#pratos-principais">Pratos Principais</a></li>
+            <li><a href="#sobremesas">Sobremesas</a></li>
         </ul>
     </nav>
 
-    <main id="menu-container">
-        <section id="entradas" aria-labelledby="entradas-heading">
-            <h2 id="entradas-heading">Entradas</h2>
-            <div class="menu-category">
-                <p>Carregando entradas...</p>
-            </div>
-        </section>
+    <!--
+        <section>: Define uma seção temática do conteúdo.
+        Justificativa: Divide o cardápio em seções de "Entradas", "Pratos Principais" e "Sobremesas".
+        Contribui para a estrutura e acessibilidade, facilitando a organização e a navegação pelo conteúdo.
+    -->
+    <section id="entradas" aria-labelledby="entradas-heading">
+        <h2 id="entradas-heading">Entradas</h2>
+        <div class="menu-category">
 
-        <section id="pratos-principais" aria-labelledby="pratos-principais-heading">
-            <h2 id="pratos-principais-heading">Pratos Principais</h2>
-            <div class="menu-category">
-                <p>Carregando pratos principais...</p>
-            </div>
-        </section>
+            <!--
+                <article>: Representa um item independente do conteúdo (uma entrada, prato ou sobremesa).
+                Justificativa: Cada item do menu é um conteúdo autocontido e reutilizável.
+                Contribui para a estrutura e acessibilidade, permitindo que cada item seja tratado como uma unidade independente.
+            -->
+            <article class="menu-item">
+                <img src="entrada1.png" alt="Bolinho de Carne Seca">
+                <h3>Bolinho de Carne Seca</h3>
+                <p>Bolinho crocante recheado com carne seca desfiada, perfeito para começar.</p>
+                <p class="preco">R$ 15,90</p>
+            </article>
 
-        <section id="sobremesas" aria-labelledby="sobremesas-heading">
-            <h2 id="sobremesas-heading">Sobremesas</h2>
-            <div class="menu-category">
-                <p>Carregando sobremesas...</p>
-            </div>
-        </section>
-    </main>
+            <article class="menu-item">
+                <img src="entrada2.png" alt="Polenta Frita">
+                <h3>Polenta Frita</h3>
+                <p>Deliciosa polenta frita sequinha, servida com molho de queijo.</p>
+                <p class="preco">R$ 19,00</p>
+            </article>
 
+            <article class="menu-item">
+                <img src="entrada3.png" alt="Bruschetta Tradicional">
+                <h3>Bruschetta Tradicional</h3>
+                <p>Pão italiano torrado com tomate fresco, manjericão, alho e azeite.</p>
+                <p class="preco">R$ 19,00</p>
+            </article>
+
+            <article class="menu-item">
+                <img src="entrada4.png" alt="Carpaccio de Carne">
+                <h3>Carpaccio de Carne</h3>
+                <p>Finas fatias de carne crua, rúcula, alcaparras e lascas de parmesão.</p>
+                <p class="preco">R$ 29,00</p>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="pratos-principais" aria-labelledby="pratos-principais-heading">
+        <h2 id="pratos-principais-heading">Pratos Principais</h2>
+        <div class="menu-category">
+            <article class="menu-item">
+                <img src="prato1.png" alt="Filé à Parmegiana">
+                <h3>Filé à Parmegiana</h3>
+                <p>Suculento filé empanado, coberto com molho de tomate caseiro e queijo derretido.</p>
+                <p class="preco">R$ 45,00</p>
+            </article>
+
+            <article class="menu-item">
+                <img src="prato2.png" alt="Risoto de Frutos do Mar">
+                <h3>Risoto de Frutos do Mar</h3>
+                <p>Risoto cremoso com camarões, lula, mariscos e um toque de açafrão.</p>
+                <p class="preco">R$ 75,00</p>
+            </article>
+
+            <article class="menu-item">
+                <img src="prato3.png" alt="Paillard de Filé com Fettuccine">
+                <h3>Paillard de Filé com Fettuccine</h3>
+                <p>Fino filé grelhado coberto com fettuccine ao molho Alfredo.</p>
+                <p class="preco">R$ 75,00</p>
+            </article>
+
+            <article class="menu-item">
+                <img src="prato4.png" alt="Salmão Grelhado com Purê">
+                <h3>Salmão Grelhado com Purê</h3>
+                <p>Posta de salmão grelhado na perfeição, acompanha purê de batata baroa.</p>
+                <p class="preco">R$ 79,00</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="sobremesas" aria-labelledby="sobremesas-heading">
+        <h2 id="sobremesas-heading">Sobremesas</h2>
+        <div class="menu-category">
+            <article class="menu-item">
+                <img src="sobremesa1.png" alt="Petit Gateau">
+                <h3>Petit Gateau</h3>
+                <p>Bolinho quente de chocolate com centro cremoso, servido com sorvete de creme.</p>
+                <p class="preco">R$ 26,00</p>
+            </article>
+
+            <article class="menu-item">
+                <img src="sobremesa2.png" alt="Palha Italiana">
+                <h3>Palha Italiana</h3>
+                <p>Doce cremoso de brigadeiro com biscoito maisena, coberto com açúcar.</p>
+                <p class="preco">R$ 14,00</p>
+            </article>
+
+            <article class="menu-item">
+                <img src="sobremesa3.png" alt="Tiramisù Clássico">
+                <h3>Tiramisù Clássico</h3>
+                <p>Camadas de biscoito champagne, café, creme de mascarpone e cacau.</p>
+                <p class="preco">R$ 28,00</p>
+            </article>
+
+            <article class="menu-item">
+                <img src="sobremesa4.png" alt="Cheesecake Frutas Vermelhas">
+                <h3>Cheesecake Frutas Vermelhas</h3>
+                <p>Base crocante, recheio cremoso de queijo e calda de frutas vermelhas frescas.</p>
+                <p class="preco">R$ 24,00</p>
+            </article>
+        </div>
+    </section>
+
+    <!--
+        <footer>: Representa o rodapé do site.
+        Justificativa: Contém informações de direitos autorais e outras informações complementares.
+        Contribui para a estrutura e acessibilidade, definindo o final do conteúdo principal.
+    -->
     <footer role="contentinfo">
-        <p>© Restaurante XPTO - Todos os direitos reservados.</p>
+        <p>© Restaurante - Todos os direitos reservados.</p>
     </footer>
-    <script src="menu-data.js" defer></script>
-    <script src="script.js" defer></script>
 
 </body>
 </html>
